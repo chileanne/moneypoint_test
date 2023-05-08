@@ -8,3 +8,4 @@ var primary2=HexColor("#2b2d41");
 var white=Colors.white;
 var black =Colors.black;
 var grey=Colors.grey;
+var orange=Colors.orange;

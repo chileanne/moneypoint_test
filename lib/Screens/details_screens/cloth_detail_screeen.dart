@@ -6,6 +6,7 @@ import 'package:moneypoint/App_config/App_Styling/app_styling.dart';
 
 import '../../App_config/App_color/app_color.dart';
 import '../../Widgets/Shared_widgets/shared_Iconbuttons.dart';
+import '../../Widgets/Shared_widgets/shared_icon.dart';
 
 class ClothDetailScreen extends StatefulWidget {
    ClothDetailScreen({Key? key}) : super(key: key);
@@ -19,7 +20,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
   Widget build(BuildContext context) {
     Size size=MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: primary1,
+      backgroundColor: white,
       appBar: AppBar(
         ///leading back button to take the user back to previous screen
         leading: IconButton(
@@ -153,6 +154,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
         child: Padding(
           padding: const EdgeInsets.only(left:18.0,right: 10),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
               const SizedBox(height: 8,),
@@ -162,7 +164,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                 height: 350,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: white,
+                  color: grey,
                   borderRadius: BorderRadius.circular(10.0)
                 ),
 
@@ -180,6 +182,8 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                         ) ),
 
 
+
+                    ///four image cards at the right handside
                     Positioned(
                         top: (size.width*0.1),
                         bottom: 0,
@@ -195,7 +199,115 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                     ))
                   ],
                 ),
-              )
+              ),
+
+              const SizedBox(height: 20,),
+              ///header widgets
+              Row(
+                children: [
+                SharedIcons(icon: EvaIcons.archive, color: grey),
+                  Text("anthony.bd",
+                  style: heading4,),
+                ],
+              ),
+
+              const SizedBox(height: 10,),
+
+              Text("Essential Men's Short - Sleeve\nCrewneck T-Shirt",
+              style: heading5,),
+
+              const SizedBox(height: 20,),
+              ///Ratings,review,and no_sold widgets
+              Row(
+               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(
+                    width: 128,
+                    child:Row(
+                        children:[
+                          SharedIcons(
+                            icon:EvaIcons.star,
+                            color:orange
+                          ),
+                          const SizedBox(width: 10,),
+                      Text("4.9 Ratings",
+                        style: heading6,),
+                    ]),
+                  ),
+
+                  const SizedBox(width: 20,),
+
+                  Text("* 2.3 + Reviews",
+                    style: heading6,),
+
+                  const SizedBox(width: 20,),
+                  Text("* 2.9 + Sold",
+                    style: heading6,),
+
+                  const SizedBox(width: 10,),
+
+                ],
+              ),
+
+
+              const SizedBox(height: 20,),
+
+              ///About item and Review tab
+              Container(
+                height: 50,
+                child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 30.0),
+                          child: Row(
+
+                            children: [
+                              Text("About Item",
+                                style: heading7,),
+
+
+                              const SizedBox(width: 64,),
+
+                              Text("Review",
+                                style: heading6,),
+                            ],
+                          ),
+                        ),
+
+                        const SizedBox(height: 6,),
+
+                        Row(
+                          children:   [
+                           SizedBox(
+                              width: 180,
+                              child: Divider(
+                                color: primary1,
+                                // height: 8,
+                                thickness: 2,),
+                            ),
+
+                            Expanded(
+                              child: Divider(
+                                color: grey,
+                                // height: 8,
+                                thickness: 2,),
+                            )
+                          ],
+                        )
+
+
+
+
+
+
+
+                      ],
+                    ),)
+
+
+
+
+
             ],
           ),
         ),

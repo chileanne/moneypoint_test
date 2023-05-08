@@ -25,4 +25,35 @@ TextStyle heading3=GoogleFonts.roboto(
 );
 
 
+TextStyle heading4=GoogleFonts.roboto(
+    fontWeight: FontWeight.w400,
+    fontSize: 14,
+    color: grey
+);
+
+
+TextStyle heading5=GoogleFonts.roboto(
+  fontWeight: FontWeight.w800,
+  fontSize: 20,
+  color: black,
+
+);
+
+
+TextStyle heading6=GoogleFonts.roboto(
+    fontWeight: FontWeight.w600,
+    fontSize: 18,
+    color: grey
+);
+
+
+TextStyle heading7=GoogleFonts.roboto(
+    fontWeight: FontWeight.w600,
+    fontSize: 18,
+    color: primary1
+);
+
+
+
+
 
