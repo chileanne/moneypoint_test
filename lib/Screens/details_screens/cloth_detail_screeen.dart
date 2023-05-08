@@ -348,6 +348,66 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
               ),
 
 
+              const SizedBox(height: 14,),
+
+
+              Divider(color: grey,thickness: 1,),
+              const SizedBox(height: 14,),
+
+              ///Description
+
+              Text("Description",
+                style: heading8,),
+
+              const SizedBox(height: 14,),
+              
+              Column(
+                children: [
+                 descriptionSubCard("Durable and Combination Cotton Fabric."),
+                  descriptionSubCard("Comfortable and quality Tshirt."),
+                  descriptionSubCard("Patch pocket on the left side."),
+                  descriptionSubCard("Go to classic shirt ."),
+                  
+                  
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text("Chat us if there is anything you need to know about the product",
+                    style: heading4,),
+                  ),
+
+
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: GestureDetector(
+                        onTap: (){
+
+                        },
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Text("See Less",
+                              style: heading7,),
+
+                            SharedIcons(icon: EvaIcons.arrowIosUpwardOutline, color: grey)
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+
+                ],
+              ),
+
+
+              const SizedBox(height: 14,),
+
+              Divider(color: grey,thickness: 1,),
+              const SizedBox(height: 14,),
+
+
+
 
 
 
@@ -398,6 +458,21 @@ Widget aboutSubCard(String title, String subtitle){
           style: heading8,),
 
 
+      ],
+    );
+}
+
+
+///description card widgets
+Widget descriptionSubCard(String desc){
+    return  Row(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SharedIcons(icon: Icons.star, color: grey,),
+        ),
+        Text(desc,
+          style:heading4,),
       ],
     );
 }
