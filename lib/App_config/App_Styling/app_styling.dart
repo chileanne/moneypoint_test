@@ -27,7 +27,7 @@ TextStyle heading3=GoogleFonts.roboto(
 
 TextStyle heading4=GoogleFonts.roboto(
     fontWeight: FontWeight.w400,
-    fontSize: 14,
+    fontSize: 16,
     color: grey
 );
 
@@ -55,7 +55,7 @@ TextStyle heading7=GoogleFonts.roboto(
 
 TextStyle heading8=GoogleFonts.roboto(
   fontWeight: FontWeight.w600,
-  fontSize: 14,
+  fontSize: 16,
   color: black,
 
 );

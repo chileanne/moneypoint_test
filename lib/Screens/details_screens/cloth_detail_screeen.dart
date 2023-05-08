@@ -464,8 +464,8 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                     children: [
                       Text("Thrifting_Store",
                         style: heading8,),
-
-                      Text("About 5mins ago | 96.7% possitive Feedback",
+                      SizedBox(height: 8,),
+                      Text("About 5mins ago | 96.7% positive Feedback",
                         style: heading4,),
 
                       SizedBox(height: 14,),
