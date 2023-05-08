@@ -191,10 +191,10 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                         right: 0,
                         child: Column(
                       children: [
-                      smallContainer("assets/test/shirtfour.jpeg"),
-                        smallContainer("assets/test/shirtfour.jpeg"),
-                        smallContainer("assets/test/shirtfour.jpeg"),
-                        smallContainer("assets/test/shirtfour.jpeg"),
+                      smallContainer("assets/test/shirtfour.jpeg",40.0,40.0),
+                        smallContainer("assets/test/shirtfour.jpeg",40.0,40.0),
+                        smallContainer("assets/test/shirtfour.jpeg",40.0,40.0),
+                        smallContainer("assets/test/shirtfour.jpeg",40.0,40.0),
                       ],
                     ))
                   ],
@@ -706,8 +706,12 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
               const SizedBox(height: 14,),
 
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-
+                  smallContainerx("assets/test/shirtfour.jpeg",80.0,80.0),
+                  smallContainerx("assets/test/shirtfour.jpeg",80.0,80.0),
+                  smallContainerx("assets/test/shirtfour.jpeg",80.0,80.0),
+                  smallContainerx("assets/test/shirtfour.jpeg",80.0,80.0),
                 ],
               )
 
@@ -739,21 +743,44 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
   ///small container widget
 ///to display images 
 
-Widget smallContainer(String s){
+Widget smallContainer(String s,double height,double width){
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        height: 40,
-        width: 40,
+        height:height,
+        width: width,
         decoration: BoxDecoration(
           color: grey,
-          //  borderRadius: BorderRadius.circular(10.0)
+            //borderRadius: BorderRadius.circular(10.0)
         ),
 
         child: Image.asset(s,fit: BoxFit.contain,),
       ),
     );
 }
+
+
+
+  ///review with images
+  /// image cards
+
+
+  Widget smallContainerx(String s,double height,double width){
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        height:height,
+        width: width,
+        decoration: BoxDecoration(
+            color: grey,
+            borderRadius: BorderRadius.circular(10.0),
+
+        ),
+
+        child: Image.asset(s,fit: BoxFit.contain,),
+      ),
+    );
+  }
 
 
 
