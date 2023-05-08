@@ -697,7 +697,19 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
               ),
 
 
+              const SizedBox(height: 20,),
 
+
+              Text("Reviews with images & videos",
+                style: heading8,),
+
+              const SizedBox(height: 14,),
+
+              Row(
+                children: [
+
+                ],
+              )
 
 
 
