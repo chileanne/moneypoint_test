@@ -700,6 +700,8 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
               const SizedBox(height: 20,),
 
 
+
+              ///Reviews with images
               Text("Reviews with images & videos",
                 style: heading8,),
 
@@ -713,6 +715,28 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                   smallContainerx("assets/test/shirtfour.jpeg",80.0,80.0),
                   smallContainerx("assets/test/shirtfour.jpeg",80.0,80.0),
                 ],
+              ),
+
+
+              const SizedBox(height: 20,),
+
+
+
+              ///top reviews
+              Text("Top Reviews",
+                style: heading8,),
+
+              const SizedBox(height: 14,),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Showing 3 of 2.5k + Reviews",
+                    style: heading9,),
+
+
+                ],
               )
 
 
@@ -720,9 +744,10 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
 
 
 
-              
 
-              
+
+
+
 
 
 
