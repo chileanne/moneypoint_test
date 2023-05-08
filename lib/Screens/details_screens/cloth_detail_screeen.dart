@@ -302,7 +302,52 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
 
 
                       ],
-                    ),)
+                    ),),
+
+
+              ///About item sub card==> when a user taps on About item
+              Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          aboutSubCard("Brand:", "Aba Made"),
+                          aboutSubCard("Color:", "Aprikot")
+
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          aboutSubCard("Category:", "T-Shirt"),
+                          aboutSubCard("Material:", "Silk"),
+
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          aboutSubCard("Condition:", "New"),
+                          aboutSubCard("Heavy:", "200g")
+
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+
 
 
 
@@ -334,6 +379,26 @@ Widget smallContainer(String s){
 
         child: Image.asset(s,fit: BoxFit.contain,),
       ),
+    );
+}
+
+
+
+
+///About item and Review tab sub card widgets
+Widget aboutSubCard(String title, String subtitle){
+    return   Row(
+      children: [
+        Text(title,
+          style: heading6,),
+
+        const SizedBox(width: 8,),
+
+        Text(subtitle,
+          style: heading8,),
+
+
+      ],
     );
 }
 }
