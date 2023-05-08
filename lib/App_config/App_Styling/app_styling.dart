@@ -48,14 +48,14 @@ TextStyle heading6=GoogleFonts.roboto(
 
 
 TextStyle heading7=GoogleFonts.roboto(
-    fontWeight: FontWeight.w600,
-    fontSize: 18,
+    fontWeight: FontWeight.w400,
+    fontSize: 14,
     color: primary1
 );
 
 TextStyle heading8=GoogleFonts.roboto(
   fontWeight: FontWeight.w600,
-  fontSize: 18,
+  fontSize: 14,
   color: black,
 
 );

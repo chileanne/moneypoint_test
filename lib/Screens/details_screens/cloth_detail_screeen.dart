@@ -404,8 +404,32 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
               const SizedBox(height: 14,),
 
               Divider(color: grey,thickness: 1,),
-              const SizedBox(height: 14,),
+              const SizedBox(height: 18,),
 
+
+
+              ///shipping information
+              Text("Shipping Information",
+                style: heading8,),
+
+              const SizedBox(height: 12,),
+              
+              
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: aboutSubCard("Delivery:", "Shipping from Aba, Nigeria"),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: aboutSubCard("Shipping:", "Shipping cost \$100"),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: aboutSubCard("Active:", "Estimate arrival on 25-27 oct 2022"),
+              ),
+              
+
+              
 
 
 
@@ -450,7 +474,7 @@ Widget aboutSubCard(String title, String subtitle){
     return   Row(
       children: [
         Text(title,
-          style: heading6,),
+          style: heading4,),
 
         const SizedBox(width: 8,),
 
