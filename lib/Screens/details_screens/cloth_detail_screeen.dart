@@ -355,7 +355,6 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
               const SizedBox(height: 14,),
 
               ///Description
-
               Text("Description",
                 style: heading8,),
 
@@ -427,6 +426,82 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                 padding: const EdgeInsets.all(8.0),
                 child: aboutSubCard("Active:", "Estimate arrival on 25-27 oct 2022"),
               ),
+
+
+
+              const SizedBox(height: 20,),
+
+              ///seller information
+              Text("Seller Information:",
+                style: heading8,),
+
+              const SizedBox(height: 14,),
+              Row(
+                children: [
+
+                  Container(
+                    width: 80,
+                    height: 80,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: grey,
+
+                    ),
+
+                    child:Padding(
+                      padding: const EdgeInsets.only(top:18.0,left:10),
+                      child: Text("Thrifting\nStore",
+                        style: heading8,),
+                    ),
+                  ),
+
+
+                  SizedBox(width: 10,),
+
+
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Thrifting_Store",
+                        style: heading8,),
+
+                      Text("About 5mins ago | 96.7% possitive Feedback",
+                        style: heading4,),
+
+                      SizedBox(height: 14,),
+                      Container(
+                        width: 160,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.0),
+                          color: white,
+                          border: Border.all(
+                            color: primary1,
+                            width: 2.0,
+
+                          )
+                        ),
+
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SharedIcons(
+                                color:primary1,
+                                icon: Icons.shopping_cart_outlined,),
+                            const SizedBox(width: 4,),
+                            Text("View Store",
+                              style: heading7,),
+                          ],
+                        ),
+                      )
+
+                    ],
+                  )
+                ],
+              )
+
+
+
               
 
               

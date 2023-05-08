@@ -4,7 +4,7 @@ import 'package:flutter/src/material/colors.dart';
 
 class SharedIcons extends StatelessWidget {
   final IconData icon;
-  final MaterialColor color;
+  final Color color;
 
   const SharedIcons({Key? key, required this.icon, required this.color}) : super(key: key);
 
