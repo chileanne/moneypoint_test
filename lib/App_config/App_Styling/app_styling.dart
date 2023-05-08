@@ -60,6 +60,20 @@ TextStyle heading8=GoogleFonts.roboto(
 
 );
 
+TextStyle heading9=GoogleFonts.roboto(
+    fontWeight: FontWeight.w400,
+    fontSize: 14,
+    color: grey
+);
+
+
+TextStyle heading10=GoogleFonts.roboto(
+  fontWeight: FontWeight.w600,
+  fontSize: 30,
+  color: black,
+
+);
+
 
 
 

@@ -432,7 +432,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
               const SizedBox(height: 20,),
 
               ///seller information
-              Text("Seller Information:",
+              Text("Seller Information",
                 style: heading8,),
 
               const SizedBox(height: 14,),
@@ -456,7 +456,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                   ),
 
 
-                  SizedBox(width: 10,),
+                  const SizedBox(width: 10,),
 
 
                   Column(
@@ -464,9 +464,9 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                     children: [
                       Text("Thrifting_Store",
                         style: heading8,),
-                      SizedBox(height: 8,),
+                      const SizedBox(height: 8,),
                       Text("About 5mins ago | 96.7% positive Feedback",
-                        style: heading4,),
+                        style: heading9,),
 
                       SizedBox(height: 14,),
                       Container(
@@ -498,7 +498,209 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                     ],
                   )
                 ],
-              )
+              ),
+
+              const SizedBox(height: 20,),
+
+              Divider(color: grey,thickness: 1,),
+
+              const SizedBox(height: 20,),
+
+
+
+              ///Ratings and Reviews
+              Text("Reviews and Ratings",
+                style: heading8,),
+
+              const SizedBox(height: 14,),
+
+
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text("4.9",
+                            style: heading10,),
+
+                          Text("/5.0",
+                            style: heading4,),
+                        ],
+                      ),
+
+                      const SizedBox(height: 8,),
+
+                      Row(
+                        children: [
+                          SharedIcons(icon: Icons.star, color: orange),
+                          SharedIcons(icon: Icons.star, color: orange),
+                          SharedIcons(icon: Icons.star, color: orange),
+                          SharedIcons(icon: Icons.star, color: orange),
+                          const SharedIcons(icon: Icons.star, color: Colors.transparent),
+                        ],
+                      ),
+
+                      const SizedBox(height: 30,),
+
+                      Text("2.3 + Reviews",
+                        style: heading4,),
+
+                    ],
+
+
+
+
+                  ),
+                  SizedBox(width:8),
+
+
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            SharedIcons(icon: Icons.star, color: orange),
+                            const SizedBox(width:8),
+                            Text("5",
+                              style: heading4,),
+                            const SizedBox(width:8),
+                            SizedBox(
+                              width: 150,
+                              child: Stack(
+                                children: [
+                                  Divider(thickness: 8,color: grey,),
+                                  SizedBox(width:130,
+                                      child: Divider(thickness: 8,color: primary1,)),
+                                ],
+                              ),
+
+                            ),
+
+                            SizedBox(width:8),
+
+                            Text("1.3k",
+                              style: heading8,),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            SharedIcons(icon: Icons.star, color: orange),
+                            const SizedBox(width:8),
+                            Text("4",
+                              style: heading4,),
+                            const SizedBox(width:8),
+                            SizedBox(
+                              width: 150,
+                              child: Stack(
+                                children: [
+                                  Divider(thickness: 8,color: grey,),
+                                  SizedBox(width:80,
+                                      child: Divider(thickness: 8,color: primary1,)),
+                                ],
+                              ),
+
+                            ),
+
+                            const SizedBox(width:8),
+
+                            Text("710",
+                              style: heading8,),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            SharedIcons(icon: Icons.star, color: orange),
+                            const SizedBox(width:8),
+                            Text("3",
+                              style: heading4,),
+                            const SizedBox(width:8),
+                            SizedBox(
+                              width: 150,
+                              child: Stack(
+                                children: [
+                                  Divider(thickness: 8,color: grey,),
+                                  SizedBox(width:24,
+                                      child: Divider(thickness: 8,color: primary1,)),
+                                ],
+                              ),
+
+                            ),
+
+                            SizedBox(width:8),
+
+                            Text("140",
+                              style: heading8,),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            SharedIcons(icon: Icons.star, color: orange),
+                            const SizedBox(width:8),
+                            Text("2",
+                              style: heading4,),
+                            const SizedBox(width:8),
+                            SizedBox(
+                              width: 150,
+                              child: Stack(
+                                children: [
+                                  Divider(thickness: 8,color: grey,),
+                                  SizedBox(width:10,
+                                      child: Divider(thickness: 8,color: primary1,)),
+                                ],
+                              ),
+
+                            ),
+
+                            const SizedBox(width:8),
+
+                            Text("10",
+                              style: heading8,),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            SharedIcons(icon: Icons.star, color: orange),
+                            const SizedBox(width:8),
+                            Text("1",
+                              style: heading4,),
+                            const SizedBox(width:8),
+                            SizedBox(
+                              width: 150,
+                              child: Stack(
+                                children: [
+                                  Divider(thickness: 8,color: grey,),
+                                  SizedBox(width:4,
+                                      child: Divider(thickness: 8,color: primary1,)),
+                                ],
+                              ),
+
+                            ),
+
+                            const SizedBox(width:8),
+
+                            Text("4",
+                              style: heading8,),
+                          ],
+                        ),
+                      ],
+                    ),
+                  )
+
+
+
+                ],
+              ),
+
+
+
+
+
+
 
 
 
