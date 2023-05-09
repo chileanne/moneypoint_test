@@ -28,8 +28,10 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
     return Scaffold(
       backgroundColor: white,
       appBar: AppBar(
+        backgroundColor: white,
         ///leading back button to take the user back to previous screen
         leading: IconButton(
+          color: black,
             icon: const Icon(Icons.arrow_back_ios),
             onPressed: () {
               print("Eva Icon heart Pressed");
@@ -38,20 +40,27 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
         ///actions widget
         actions: [
 
-         SharedImageButton(
+         Obx(()=>
+             homeController.selectedLove.value.isEmpty?
+             SharedImageButton(
            icon: "assets/icons/heart.png",
            onTap:(){
-
+             homeController.selectedLove.value="1";
            }
 
-         ),
+         ):
 
-          // SharedIconButton(
-          //   icon: EvaIcons.heart,
-          //   onPressed: () {
-          //     print("Eva Icon heart Pressed");
-          //   },
-          // ),
+          SharedIconButton(
+            color: Colors.red,
+            icon: EvaIcons.heart,
+            onPressed: () {
+              print("Eva Icon heart Pressed");
+              homeController.selectedLove.value="";
+            },
+          )),
+
+
+
           SharedIconButton(
               icon: Icons.share,
               onPressed: () {

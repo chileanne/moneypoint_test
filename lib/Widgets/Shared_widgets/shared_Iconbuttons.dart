@@ -15,7 +15,7 @@ class SharedIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-
+      padding: EdgeInsets.zero,
         icon: Icon(icon),
         onPressed: onPressed,
       color: color??grey,
