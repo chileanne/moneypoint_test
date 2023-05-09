@@ -171,7 +171,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                 height: 350,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                    color: grey, borderRadius: BorderRadius.circular(10.0)),
+                    color: primary3, borderRadius: BorderRadius.circular(10.0)),
                 child: Stack(
                   children: [
                     ///Main image widget
@@ -943,6 +943,33 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
               ),
 
               const SizedBox(
+                height: 8,
+              ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      SharedIcons(icon:Icons.thumb_up_off_alt_rounded, color: primary1),
+                      const SizedBox(width: 10,),
+                      Text(
+                        "Helpful ?",
+                        style: heading7,
+                      ),
+                    ],
+                  ),
+                  Text(
+                    "Yesterday",
+                    style: heading9,
+                  ),
+
+
+
+                ],
+              ),
+
+              const SizedBox(
                 height: 20,
               ),
 
@@ -1007,6 +1034,33 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
               Text(
                 "i am satisfied witht the time of delivery\nthank you",
                 style: heading11,
+              ),
+
+              const SizedBox(
+                height: 8,
+              ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      SharedIcons(icon:Icons.thumb_up_off_alt_rounded, color: primary1),
+                      const SizedBox(width: 10,),
+                      Text(
+                        "Helpful ?",
+                        style: heading7,
+                      ),
+                    ],
+                  ),
+                  Text(
+                    "Yesterday",
+                    style: heading9,
+                  ),
+
+
+
+                ],
               ),
 
 
