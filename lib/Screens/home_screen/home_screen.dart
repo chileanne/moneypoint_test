@@ -207,7 +207,7 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.all(8.0),
               child:  SharedImageAssets(image: icon, height: 24.0, width: 24.0,),
             )),
-        const SizedBox(height: 4,),
+        const SizedBox(height: 6,),
         Text(title,style: heading4,)
       ],
     );
