@@ -973,6 +973,8 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                 height: 20,
               ),
 
+              ///end
+
               ///user two
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1060,6 +1062,30 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
 
 
 
+                ],
+              ),
+
+
+              ///end
+
+              const SizedBox(
+                height: 30,
+              ),
+
+
+              ///see more
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "<  1  2  3  ...  >",
+                    style: heading11,
+                  ),
+
+                  Text(
+                    "See more",
+                    style: heading7,
+                  ),
                 ],
               ),
 
