@@ -29,9 +29,10 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
       backgroundColor: white,
       appBar: AppBar(
         backgroundColor: white,
+
         ///leading back button to take the user back to previous screen
         leading: IconButton(
-          color: black,
+            color: black,
             icon: const Icon(Icons.arrow_back_ios),
             onPressed: () {
               print("Eva Icon heart Pressed");
@@ -39,39 +40,65 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
 
         ///actions widget
         actions: [
+          Obx(() => homeController.selectedLove.value.isEmpty
+              ? SharedImageButton(
+                  icon: "assets/icons/heart.png",
+                  onTap: () {
+                    homeController.selectedLove.value = "1";
+                  })
+              : SharedIconButton(
+                  color: Colors.red,
+                  icon: EvaIcons.heart,
+                  onPressed: () {
+                    print("Eva Icon heart Pressed");
+                    homeController.selectedLove.value = "";
+                  },
+                )),
 
-         Obx(()=>
-             homeController.selectedLove.value.isEmpty?
-             SharedImageButton(
-           icon: "assets/icons/heart.png",
-           onTap:(){
-             homeController.selectedLove.value="1";
-           }
+          SharedImageButton(icon: "assets/icons/share.png", onTap: () {}),
 
-         ):
+          Padding(
+            padding: const EdgeInsets.only(top:8.0,bottom: 8.0,right: 8.0),
+            child: Stack(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Image.asset(
+                    "assets/icons/cart.png",
+                    color: black,
+                    height: 28,
+                    width: 28,
+                  ),
+                ),
+                Positioned(
+                    top: 4,
+                   // bottom: 0,
+                    left: 20,
+                    //right: 0,
+                    child: Container(
+                      width: 18,
+                      height: 18,
+                      decoration: BoxDecoration(
+                          color: primary4,
+                          borderRadius: BorderRadius.circular(2.0)),
+                      child: Center(
+                        child: Text(
+                          "1",
+                          style: heading12,
+                        ),
+                      ),
+                    ))
+              ],
+            ),
+          )
 
-          SharedIconButton(
-            color: Colors.red,
-            icon: EvaIcons.heart,
-            onPressed: () {
-              print("Eva Icon heart Pressed");
-              homeController.selectedLove.value="";
-            },
-          )),
-
-
-
-          SharedIconButton(
-              icon: Icons.share,
-              onPressed: () {
-                print("Eva Icon heart Pressed");
-              }),
-          SharedIconButton(
-            icon: EvaIcons.lock,
-            onPressed: () {
-              print("Eva Icon heart Pressed");
-            },
-          ),
+          //   SharedImageButton(
+          //       icon: "assets/icons/cart.png",
+          //       onTap:(){
+          //
+          //       }
+          //
+          //   )
         ],
       ),
       bottomNavigationBar: BottomAppBar(
@@ -118,7 +145,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                 child: Row(
                   children: [
                     Container(
-                      width: 64,
+                      width: 80,
                       height: 60,
                       decoration: BoxDecoration(
                           color: primary1,
@@ -137,7 +164,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                             style: heading3,
                           ),
                           const SizedBox(
-                            width: 4,
+                            width: 10,
                           )
                         ],
                       ),
@@ -816,7 +843,6 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                 height: 20,
               ),
 
-
               ///top reviews
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -846,17 +872,15 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                         child: DropdownButtonFormField(
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color:grey, width: 2),
+                                borderSide: BorderSide(color: grey, width: 2),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               border: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: grey, width: 2),
+                                borderSide: BorderSide(color: grey, width: 2),
                                 borderRadius: BorderRadius.circular(10),
                               ),
 
-                               filled: true,
+                              filled: true,
                               // fillColor: Colors.blueAccent,
                             ),
                             dropdownColor: white,
@@ -865,7 +889,6 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                               fontSize: 14,
                               color: black,
                             ),
-
                             elevation: 1,
                             // isExpanded: true,
                             value: homeController.selectedDropdownValue.value,
@@ -880,13 +903,11 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                 ],
               ),
 
-          const SizedBox(
-          height: 20,
-        ),
+              const SizedBox(
+                height: 20,
+              ),
 
-
-
-        ///users Rating
+              ///users Rating
               ///
               ///User one
               Row(
@@ -896,10 +917,9 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                     children: [
                       const CircleAvatar(
                         radius: 20,
-                       backgroundImage: AssetImage("assets/test/obi.jpg"),
+                        backgroundImage: AssetImage("assets/test/obi.jpg"),
                       ),
-
-                      const SizedBox(width:6),
+                      const SizedBox(width: 6),
                       Text(
                         "Emem y*****y",
                         style: heading8,
@@ -909,24 +929,18 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                   Row(
                     children: [
                       SharedIcons(icon: Icons.star, color: orange),
-                      const SizedBox(width:2),
+                      const SizedBox(width: 2),
                       Text(
                         "5.0",
                         style: heading8,
                       ),
-
-                      const SizedBox(width:4),
-
+                      const SizedBox(width: 4),
                       Text(
                         ". . .",
                         style: heading4,
                       ),
-
                     ],
                   )
-
-
-
                 ],
               ),
               const SizedBox(
@@ -945,7 +959,6 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                 height: 14,
               ),
 
-
               Text(
                 "According to my expectation this the best\nthank you",
                 style: heading11,
@@ -960,8 +973,12 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                 children: [
                   Row(
                     children: [
-                      SharedIcons(icon:Icons.thumb_up_off_alt_rounded, color: primary1),
-                      const SizedBox(width: 10,),
+                      SharedIcons(
+                          icon: Icons.thumb_up_off_alt_rounded,
+                          color: primary1),
+                      const SizedBox(
+                        width: 10,
+                      ),
                       Text(
                         "Helpful ?",
                         style: heading7,
@@ -972,9 +989,6 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                     "Yesterday",
                     style: heading9,
                   ),
-
-
-
                 ],
               ),
 
@@ -994,8 +1008,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                         radius: 20,
                         backgroundImage: AssetImage("assets/test/obi.jpg"),
                       ),
-
-                      const SizedBox(width:6),
+                      const SizedBox(width: 6),
                       Text(
                         "Emem y*****y",
                         style: heading8,
@@ -1005,24 +1018,18 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                   Row(
                     children: [
                       SharedIcons(icon: Icons.star, color: orange),
-                      const SizedBox(width:2),
+                      const SizedBox(width: 2),
                       Text(
                         "3.0",
                         style: heading8,
                       ),
-
-                      const SizedBox(width:4),
-
+                      const SizedBox(width: 4),
                       Text(
                         ". . .",
                         style: heading4,
                       ),
-
                     ],
                   )
-
-
-
                 ],
               ),
               const SizedBox(
@@ -1041,7 +1048,6 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                 height: 14,
               ),
 
-
               Text(
                 "i am satisfied witht the time of delivery\nthank you",
                 style: heading11,
@@ -1056,8 +1062,12 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                 children: [
                   Row(
                     children: [
-                      SharedIcons(icon:Icons.thumb_up_off_alt_rounded, color: primary1),
-                      const SizedBox(width: 10,),
+                      SharedIcons(
+                          icon: Icons.thumb_up_off_alt_rounded,
+                          color: primary1),
+                      const SizedBox(
+                        width: 10,
+                      ),
                       Text(
                         "Helpful ?",
                         style: heading7,
@@ -1068,19 +1078,14 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                     "Yesterday",
                     style: heading9,
                   ),
-
-
-
                 ],
               ),
-
 
               ///end
 
               const SizedBox(
                 height: 30,
               ),
-
 
               ///see more
               Row(
@@ -1090,15 +1095,12 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                     "<  1  2  3  ...  >",
                     style: heading11,
                   ),
-
                   Text(
                     "See more",
                     style: heading7,
                   ),
                 ],
               ),
-
-
             ],
           ),
         ),
@@ -1195,24 +1197,18 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
     );
   }
 
-
   ///types of reviews card
-   Widget reviewSubCard(String desc){
-    return   Container(
+  Widget reviewSubCard(String desc) {
+    return Container(
       decoration: BoxDecoration(
           border: Border.all(
             color: primary1,
-
           ),
           borderRadius: BorderRadius.circular(12.0)),
-
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Text(
-            desc,
-            style:heading7
-        ),
+        child: Text(desc, style: heading7),
       ),
     );
-   }
+  }
 }

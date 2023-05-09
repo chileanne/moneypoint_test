@@ -13,10 +13,13 @@ class SharedImageButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return  GestureDetector(
       onTap: onTap,
-        child: Image.asset(icon,
-          color: black,
-          height: 25,
-            width: 25,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Image.asset(icon,
+            color: black,
+            height: 25,
+              width: 25,
+          ),
         )
 
     );
