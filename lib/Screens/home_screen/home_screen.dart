@@ -120,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
               background: Column(
                 children: [
                   SizedBox(
-                    height: 300,
+                    height: 320,
                     child: PageView(
                       scrollDirection: Axis.horizontal,
                       children: [
@@ -157,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(10.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
