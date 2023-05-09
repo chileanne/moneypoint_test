@@ -17,6 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
+
           ///app bar
           SliverAppBar(
             toolbarHeight: 80,
@@ -42,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Spacer(),
                 Padding(
                   padding:
-                      const EdgeInsets.only(top: 8.0, bottom: 8.0, right: 8.0),
+                  const EdgeInsets.only(top: 8.0, bottom: 8.0, right: 8.0),
                   child: Stack(
                     children: [
                       Padding(
@@ -77,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsets.only(top: 8.0, bottom: 8.0, right: 8.0),
+                  const EdgeInsets.only(top: 8.0, bottom: 8.0, right: 8.0),
                   child: Stack(
                     children: [
                       Padding(
@@ -114,43 +115,60 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             pinned: true,
             backgroundColor: white,
-            expandedHeight: 240,
+            expandedHeight: 360,
             flexibleSpace: FlexibleSpaceBar(
-              background: PageView(
-                scrollDirection: Axis.horizontal,
+              background: Column(
                 children: [
-                  //appbarImage( "assets/test/onen.png",),
-                  // appbarImage(
-                  //   "assets/test/one.jpeg",
-                  // ),
-                  // appbarImage(
-                  //   "assets/test/two.jpeg",
-                  // ),
-                  // appbarImage(
-                  //   "assets/test/three.jpeg",
-                  // ),
-                  // appbarImage(
-                  //   "assets/test/four.jpeg",
-                  // ),
+                  SizedBox(
+                    height: 300,
+                    child: PageView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        //appbarImage( "assets/test/onen.png",),
+                        // appbarImage(
+                        //   "assets/test/one.jpeg",
+                        // ),
+                        // appbarImage(
+                        //   "assets/test/two.jpeg",
+                        // ),
+                        // appbarImage(
+                        //   "assets/test/three.jpeg",
+                        // ),
+                        // appbarImage(
+                        //   "assets/test/four.jpeg",
+                        // ),
 
-                  appbarImage(
-                    "assets/test/fabx.jpeg",
+                        appbarImage(
+                          "assets/test/fabx.jpeg",
+                        ),
+
+
+                        appbarImage(
+                          "assets/test/fab.jpeg",
+                        ),
+
+
+                        appbarImage(
+                          "assets/test/fabc.jpeg",
+                        ),
+
+
+                      ],
+                    ),
                   ),
-
-
-                  appbarImage(
-                    "assets/test/fab.jpeg",
-                  ),
-
-
-
-                  appbarImage(
-                    "assets/test/fabc.jpeg",
-                  ),
-
-
-
-
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        iconCard("Category", "assets/icons/category.png"),
+                        iconCard("Flight", "assets/icons/flight.png"),
+                        iconCard("Bill", "assets/icons/dataplans.png"),
+                        iconCard("Data Plan", "assets/icons/dataplans.png"),
+                        iconCard("Top Up", "assets/icons/topup.png")
+                      ],
+                    ),
+                  )
                 ],
               ),
             ),
@@ -173,6 +191,25 @@ class _HomeScreenState extends State<HomeScreen> {
       // height: height,
       //  width: 300,
       fit: BoxFit.cover,
+    );
+  }
+
+
+  Widget iconCard(String title,String icon){
+    return  Column(
+      children: [
+        Container(
+            decoration: BoxDecoration(
+                color: primary3,
+                borderRadius: BorderRadius.circular(10.0)
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child:  SharedImageAssets(image: icon, height: 24.0, width: 24.0,),
+            )),
+        const SizedBox(height: 4,),
+        Text(title,style: heading4,)
+      ],
     );
   }
 }
