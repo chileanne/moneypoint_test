@@ -798,7 +798,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
               ),
 
 
-
+              ///top reviews
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 //  crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -859,7 +859,147 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                             items: dropdownItems),
                       ))
                 ],
-              )
+              ),
+
+          const SizedBox(
+          height: 20,
+        ),
+
+
+
+        ///users Rating
+              ///
+              ///User one
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      const CircleAvatar(
+                        radius: 20,
+                       backgroundImage: AssetImage("assets/test/obi.jpg"),
+                      ),
+
+                      const SizedBox(width:6),
+                      Text(
+                        "Emem y*****y",
+                        style: heading8,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      SharedIcons(icon: Icons.star, color: orange),
+                      const SizedBox(width:2),
+                      Text(
+                        "5.0",
+                        style: heading8,
+                      ),
+
+                      const SizedBox(width:4),
+
+                      Text(
+                        ". . .",
+                        style: heading4,
+                      ),
+
+                    ],
+                  )
+
+
+
+                ],
+              ),
+              const SizedBox(
+                height: 14,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  reviewSubCard("Positive Review"),
+                  reviewSubCard("Negative Review"),
+                  reviewSubCard("Critical Review"),
+                ],
+              ),
+
+              const SizedBox(
+                height: 14,
+              ),
+
+
+              Text(
+                "According to my expectation this the best\nthank you",
+                style: heading11,
+              ),
+
+              const SizedBox(
+                height: 20,
+              ),
+
+              ///user two
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      const CircleAvatar(
+                        radius: 20,
+                        backgroundImage: AssetImage("assets/test/obi.jpg"),
+                      ),
+
+                      const SizedBox(width:6),
+                      Text(
+                        "Emem y*****y",
+                        style: heading8,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      SharedIcons(icon: Icons.star, color: orange),
+                      const SizedBox(width:2),
+                      Text(
+                        "3.0",
+                        style: heading8,
+                      ),
+
+                      const SizedBox(width:4),
+
+                      Text(
+                        ". . .",
+                        style: heading4,
+                      ),
+
+                    ],
+                  )
+
+
+
+                ],
+              ),
+              const SizedBox(
+                height: 14,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  reviewSubCard("Positive Review"),
+                  reviewSubCard("Negative Review"),
+                  reviewSubCard("Critical Review"),
+                ],
+              ),
+
+              const SizedBox(
+                height: 14,
+              ),
+
+
+              Text(
+                "i am satisfied witht the time of delivery\nthank you",
+                style: heading11,
+              ),
+
+
             ],
           ),
         ),
@@ -955,4 +1095,25 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
       ],
     );
   }
+
+
+  ///types of reviews card
+   Widget reviewSubCard(String desc){
+    return   Container(
+      decoration: BoxDecoration(
+          border: Border.all(
+            color: primary1,
+
+          ),
+          borderRadius: BorderRadius.circular(12.0)),
+
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text(
+            desc,
+            style:heading7
+        ),
+      ),
+    );
+   }
 }
