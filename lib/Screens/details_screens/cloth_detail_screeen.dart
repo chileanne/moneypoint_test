@@ -10,6 +10,7 @@ import 'package:moneypoint/Services/Controllers/homeControllers.dart';
 import '../../App_config/App_color/app_color.dart';
 import '../../Widgets/Shared_widgets/shared_Iconbuttons.dart';
 import '../../Widgets/Shared_widgets/shared_icon.dart';
+import '../../Widgets/Shared_widgets/shared_image_button.dart';
 
 class ClothDetailScreen extends StatefulWidget {
   ClothDetailScreen({Key? key}) : super(key: key);
@@ -36,12 +37,21 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
 
         ///actions widget
         actions: [
-          SharedIconButton(
-            icon: EvaIcons.heart,
-            onPressed: () {
-              print("Eva Icon heart Pressed");
-            },
-          ),
+
+         SharedImageButton(
+           icon: "assets/icons/heart.png",
+           onTap:(){
+
+           }
+
+         ),
+
+          // SharedIconButton(
+          //   icon: EvaIcons.heart,
+          //   onPressed: () {
+          //     print("Eva Icon heart Pressed");
+          //   },
+          // ),
           SharedIconButton(
               icon: Icons.share,
               onPressed: () {
