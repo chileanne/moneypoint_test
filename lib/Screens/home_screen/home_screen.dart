@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:moneypoint/Widgets/Shared_widgets/share_image_assets.dart';
 
+import '../../App_config/App_Styling/app_styling.dart';
 import '../../App_config/App_color/app_color.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -19,36 +20,101 @@ class _HomeScreenState extends State<HomeScreen> {
           ///app bar
           SliverAppBar(
             toolbarHeight: 80,
-            title: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 220,
-                    child: TextFormField(
-                      autofocus: true,
-                      decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.search,color: grey,size: 24.0),
-                          hintText: 'Search',
-                        focusedBorder: OutlineInputBorder(
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  width: 260,
+                  child: TextFormField(
+                    autofocus: true,
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.search, color: grey, size: 24.0),
+                      hintText: 'Search',
+                      focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
-                         borderSide: BorderSide(
-                           color: grey,
-                           width: 1.0,
-                           style: BorderStyle.solid
-                         )
-                        ),
-                      ),
+                          borderSide: BorderSide(
+                              color: grey,
+                              width: 2.0,
+                              style: BorderStyle.solid)),
                     ),
                   ),
-
-
-                ],
-              ),
+                ),
+                Spacer(),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(top: 8.0, bottom: 8.0, right: 8.0),
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image.asset(
+                          "assets/icons/cart.png",
+                          color: primary5,
+                          height: 34,
+                          width: 34,
+                        ),
+                      ),
+                      Positioned(
+                          top: 4,
+                          // bottom: 0,
+                          left: 20,
+                          //right: 0,
+                          child: Container(
+                            width: 18,
+                            height: 18,
+                            decoration: BoxDecoration(
+                                color: primary4,
+                                borderRadius: BorderRadius.circular(2.0)),
+                            child: Center(
+                              child: Text(
+                                "1",
+                                style: heading12,
+                              ),
+                            ),
+                          ))
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(top: 8.0, bottom: 8.0, right: 8.0),
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image.asset(
+                          "assets/icons/cart.png",
+                          color: primary5,
+                          height: 34,
+                          width: 34,
+                        ),
+                      ),
+                      Positioned(
+                          top: 4,
+                          // bottom: 0,
+                          left: 20,
+                          //right: 0,
+                          child: Container(
+                            width: 18,
+                            height: 18,
+                            decoration: BoxDecoration(
+                                color: primary4,
+                                borderRadius: BorderRadius.circular(2.0)),
+                            child: Center(
+                              child: Text(
+                                "1",
+                                style: heading12,
+                              ),
+                            ),
+                          ))
+                    ],
+                  ),
+                )
+              ],
             ),
             pinned: true,
             backgroundColor: white,
-            expandedHeight: 300,
+            expandedHeight: 240,
             flexibleSpace: FlexibleSpaceBar(
               background: PageView(
                 scrollDirection: Axis.horizontal,
@@ -60,12 +126,31 @@ class _HomeScreenState extends State<HomeScreen> {
                   // appbarImage(
                   //   "assets/test/two.jpeg",
                   // ),
+                  // appbarImage(
+                  //   "assets/test/three.jpeg",
+                  // ),
+                  // appbarImage(
+                  //   "assets/test/four.jpeg",
+                  // ),
+
                   appbarImage(
-                    "assets/test/three.jpeg",
+                    "assets/test/fabx.jpeg",
                   ),
+
+
                   appbarImage(
-                    "assets/test/four.jpeg",
+                    "assets/test/fab.jpeg",
                   ),
+
+
+
+                  appbarImage(
+                    "assets/test/fabc.jpeg",
+                  ),
+
+
+
+
                 ],
               ),
             ),
@@ -85,7 +170,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget appbarImage(String image) {
     return Image.asset(
       image,
-      // color: Colors.red,
       // height: height,
       //  width: 300,
       fit: BoxFit.cover,
