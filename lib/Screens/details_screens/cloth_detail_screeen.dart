@@ -797,23 +797,29 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                 height: 20,
               ),
 
-              ///top reviews
-              Text(
-                "Top Reviews",
-                style: heading8,
-              ),
 
-              const SizedBox(
-                height: 12,
-              ),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 //  crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Text(
-                    "Showing 3 of 2.5k + Reviews",
-                    style: heading9,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ///top reviews
+                      Text(
+                        "Top Reviews",
+                        style: heading8,
+                      ),
+
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      Text(
+                        "Showing 3 of 2.5k + Reviews",
+                        style: heading9,
+                      ),
+                    ],
                   ),
                   Obx(() => SizedBox(
                         height: 54,
