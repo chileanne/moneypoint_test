@@ -169,7 +169,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                         child: SizedBox(
                       width: double.infinity,
                       child: Image.asset(
-                        "assets/test/shirtfour.jpeg",
+                        "assets/test/shirtfour.png",
                         fit: BoxFit.contain,
                       ),
                     )),
@@ -183,13 +183,13 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                         child: Column(
                           children: [
                             smallContainer(
-                                "assets/test/shirtfour.jpeg", 40.0, 40.0),
+                                "assets/test/shirtfour.png", 40.0, 40.0),
                             smallContainer(
-                                "assets/test/shirtfour.jpeg", 40.0, 40.0),
+                                "assets/test/shirtfour.png", 40.0, 40.0),
                             smallContainer(
-                                "assets/test/shirtfour.jpeg", 40.0, 40.0),
+                                "assets/test/shirtfour.png", 40.0, 40.0),
                             smallContainer(
-                                "assets/test/shirtfour.jpeg", 40.0, 40.0),
+                                "assets/test/shirtfour.png", 40.0, 40.0),
                           ],
                         ))
                   ],
@@ -786,10 +786,10 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  smallContainerx("assets/test/shirtfour.jpeg", 80.0, 80.0),
-                  smallContainerx("assets/test/shirtfour.jpeg", 80.0, 80.0),
-                  smallContainerx("assets/test/shirtfour.jpeg", 80.0, 80.0),
-                  smallContainerx("assets/test/shirtfour.jpeg", 80.0, 80.0),
+                  smallContainerx("assets/test/shirtfour.png", 80.0, 80.0),
+                  smallContainerx("assets/test/shirtfour.png", 80.0, 80.0),
+                  smallContainerx("assets/test/shirtfour.png", 80.0, 80.0),
+                  smallContainerx("assets/test/shirtfour.png", 80.0, 80.0),
                 ],
               ),
 
