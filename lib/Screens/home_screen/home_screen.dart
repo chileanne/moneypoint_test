@@ -192,7 +192,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Image.asset(
-                          "assets/icons/cart.png",
+                          "assets/icons/chat.png",
                           color: primary5,
                           height: 34,
                           width: 34,
@@ -287,7 +287,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
           ///Grid view list
-          SliverGrid(
+          Obx(()=>SliverGrid(
               delegate: SliverChildBuilderDelegate((context,index){
                 return GestureDetector(
                   onTap: (){
@@ -377,30 +377,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 );
-
-                //   Padding(
-                //   padding: const EdgeInsets.all(8.0),
-                //   child: Card(
-                //   elevation: 2.0,
-                //    child: Column(
-                //      children: [
-                //        ///image card
-                //        Container(
-                //          height:120,
-                //          decoration: BoxDecoration(
-                //            borderRadius: BorderRadius.circular(10.0),
-                //            color: primary3,
-                //            // image: DecorationImage(
-                //            //   image: AssetImage("assets/test/shirtfour.png")
-                //            // )
-                //          ),
-                //
-                //        )
-                //      ],
-                //    ),
-                //   ),
-                // );
-              },
+                },
               childCount: homeController.itemList.length),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
@@ -412,7 +389,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
               ),
-          ),
+          )),
         ],
       ),
     );
