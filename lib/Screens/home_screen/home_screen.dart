@@ -159,8 +159,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Image.asset(
                           "assets/icons/cart.png",
                           color: primary5,
-                          height: 34,
-                          width: 34,
+                          height: Platform.isIOS?34:30,
+                          width: Platform.isIOS?34:30,
                         ),
                       ),
                       Positioned(
@@ -194,8 +194,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Image.asset(
                           "assets/icons/chat.png",
                           color: primary5,
-                          height: 34,
-                          width: 34,
+                          height: Platform.isIOS?34:30,
+                          width: Platform.isIOS?34:30,
                         ),
                       ),
                       Positioned(
@@ -223,7 +223,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             pinned: true,
             backgroundColor: white,
-            expandedHeight: Platform.isIOS?360:368,
+            expandedHeight: Platform.isIOS?360:400,
             flexibleSpace: FlexibleSpaceBar(
               background: Column(
                 children: [
@@ -277,13 +277,25 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
+            bottom: PreferredSize(
+                preferredSize: Size.fromHeight(20),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Best Sale Product",
+                      style: heading5,),
+                      Text("See more",
+                        style: heading7,),
+
+                    ],
+                  ),
+                )),
           ),
-          const SliverToBoxAdapter(
-            child: Text(
-              "Lorem-ipsum dolor sit amet, consectetur adipiscing elit. In finibu",
-              style: TextStyle(fontSize: 22),
-            ),
-          ),
+
+
+
 
 
           ///Grid view list
@@ -341,7 +353,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               padding: const EdgeInsets.all(8.0),
                               child: Text(
                                 homeController.itemList[index].name!,
-                                style: heading5,
+                                style: heading16,
                               ),
                             ),
                           ),

@@ -268,10 +268,11 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
               ///header widgets
               Row(
                 children: [
-                  SharedIcons(icon: EvaIcons.archive, color: grey),
+                  Icon(EvaIcons.archive,color: grey,size: 16,),
+                //  SharedIcons(icon: EvaIcons.archive, color: grey),
                   Text(
                     widget.brandName,
-                    style: heading4,
+                    style: heading13,
                   ),
                 ],
               ),

@@ -114,6 +114,14 @@ TextStyle heading15=GoogleFonts.roboto(
 );
 
 
+TextStyle heading16=GoogleFonts.roboto(
+  fontWeight: FontWeight.w600,
+  fontSize: 16,
+  color: black,
+
+);
+
+
 
 
 
