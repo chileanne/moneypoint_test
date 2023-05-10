@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -130,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
-                  width: 260,
+                  width: 220,
                   child: TextFormField(
                     autofocus: true,
                     decoration: InputDecoration(
@@ -220,7 +222,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             pinned: true,
             backgroundColor: white,
-            expandedHeight: 360,
+            expandedHeight: Platform.isIOS?360:368,
             flexibleSpace: FlexibleSpaceBar(
               background: Column(
                 children: [
@@ -243,14 +245,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         //   "assets/test/four.jpeg",
                         // ),
 
-                        appbarImage(
-                          "assets/test/fabx.jpeg",
-                        ),
 
 
-                        appbarImage(
-                          "assets/test/fab.jpeg",
-                        ),
+
+                        // appbarImage(
+                        //   "assets/test/fab.jpeg",
+                        // ),
 
 
                         appbarImage(
@@ -401,11 +401,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 // );
               },
               childCount: homeController.itemList.length),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 mainAxisSpacing: 6,
                 crossAxisSpacing: 4,
-                childAspectRatio: 0.6
+                childAspectRatio: Platform.isIOS?0.6:0.52
 
 
 
@@ -430,6 +430,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget iconCard(String title,String icon){
     return  Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
             decoration: BoxDecoration(
@@ -438,10 +439,10 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child:  SharedImageAssets(image: icon, height: 24.0, width: 24.0,),
+              child:  SharedImageAssets(image: icon, height: 22.0, width: 22.0,),
             )),
         const SizedBox(height: 6,),
-        Text(title,style: heading4,)
+        Text(title,style: heading13,)
       ],
     );
   }

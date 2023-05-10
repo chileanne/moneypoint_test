@@ -1,5 +1,7 @@
 
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:moneypoint/App_config/App_color/app_color.dart';
@@ -34,7 +36,7 @@ TextStyle heading4=GoogleFonts.roboto(
 
 TextStyle heading5=GoogleFonts.roboto(
   fontWeight: FontWeight.w800,
-  fontSize: 20,
+  fontSize: Platform.isIOS?20:18,
   color: black,
 
 );
