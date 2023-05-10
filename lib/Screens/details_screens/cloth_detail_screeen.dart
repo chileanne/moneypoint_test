@@ -982,14 +982,20 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
               const SizedBox(
                 height: 14,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  reviewSubCard("Positive Review"),
-                  reviewSubCard("Negative Review"),
-                  reviewSubCard("Critical Review"),
-                ],
-              ),
+
+
+             SizedBox(
+               width: 400,
+               height: 50,
+               child: ListView(
+                 scrollDirection: Axis.horizontal,
+                  children: [
+                    reviewSubCard("Positive Review"),
+                    reviewSubCard("Negative Review"),
+                    reviewSubCard("Critical Review"),
+                  ],
+                ),
+             ),
 
               const SizedBox(
                 height: 14,
@@ -1071,13 +1077,17 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
               const SizedBox(
                 height: 14,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  reviewSubCard("Positive Review"),
-                  reviewSubCard("Negative Review"),
-                  reviewSubCard("Critical Review"),
-                ],
+              SizedBox(
+                width: 400,
+                height: 50,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    reviewSubCard("Positive Review"),
+                    reviewSubCard("Negative Review"),
+                    reviewSubCard("Critical Review"),
+                  ],
+                ),
               ),
 
               const SizedBox(
@@ -1235,15 +1245,18 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
 
   ///types of reviews card
   Widget reviewSubCard(String desc) {
-    return Container(
-      decoration: BoxDecoration(
-          border: Border.all(
-            color: primary1,
-          ),
-          borderRadius: BorderRadius.circular(12.0)),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(desc, style: heading7),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        decoration: BoxDecoration(
+            border: Border.all(
+              color: primary1,
+            ),
+            borderRadius: BorderRadius.circular(12.0)),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(desc, style: heading7),
+        ),
       ),
     );
   }
