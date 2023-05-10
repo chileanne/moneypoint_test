@@ -228,7 +228,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             pinned: true,
             backgroundColor: white,
-            expandedHeight: Platform.isIOS?360:400,
+            expandedHeight: Platform.isIOS?400:400,
             flexibleSpace: FlexibleSpaceBar(
               background: Column(
                 children: [

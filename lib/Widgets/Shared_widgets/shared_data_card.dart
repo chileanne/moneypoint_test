@@ -32,7 +32,7 @@ class SharedDataCard extends StatelessWidget {
               width: double.infinity,
               child: Stack(
                 children: [
-                  Image.asset(controller.image!,),
+                  Positioned.fill(child: Image.asset(controller.image!,fit: BoxFit.contain,)),
 
                   Positioned(
                       right: 9,

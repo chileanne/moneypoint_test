@@ -529,13 +529,15 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                     height: 80,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: grey,
+                      color: primary3,
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 18.0, left: 10),
-                      child: Text(
-                        "Thrifting\nStore",
-                        style: heading8,
+                      padding: const EdgeInsets.only(top: 2.0, left: 8),
+                      child: Center(
+                        child: Text(
+                          "Thrifting\nStore",
+                          style: heading8,
+                        ),
                       ),
                     ),
                   ),
@@ -657,7 +659,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                   ),
                   SizedBox(width: 8),
                   SizedBox(
-                    width: 200,
+                    width: Platform.isIOS?240:200,
                     child: Column(
                       children: [
                         Row(
@@ -785,7 +787,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                                 ],
                               ),
                             ),
-                            SizedBox(width: Platform.isIOS?8:4),
+                            SizedBox(width: Platform.isIOS?2:4),
                             Text(
                               "10",
                               style: heading8,
