@@ -133,6 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 SizedBox(
                   width: 220,
+                  height: 40,
                   child: TextFormField(
                     autofocus: true,
                     decoration: InputDecoration(
@@ -150,7 +151,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Spacer(),
                 Padding(
                   padding:
-                  const EdgeInsets.only(top: 8.0, bottom: 8.0, right: 8.0),
+                  const EdgeInsets.only(top: 8.0, bottom: 8.0,),
                   child: Stack(
                     children: [
                       Padding(
@@ -185,7 +186,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Padding(
                   padding:
-                  const EdgeInsets.only(top: 8.0, bottom: 8.0, right: 8.0),
+                  const EdgeInsets.only(top: 8.0, bottom: 8.0,),
                   child: Stack(
                     children: [
                       Padding(
