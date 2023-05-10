@@ -56,8 +56,8 @@ TextStyle heading7=GoogleFonts.roboto(
 );
 
 TextStyle heading8=GoogleFonts.roboto(
-  fontWeight: FontWeight.w600,
-  fontSize: 16,
+  fontWeight: FontWeight.w500,
+  fontSize: 14,
   color: black,
 
 );

@@ -11,6 +11,7 @@ import 'package:moneypoint/Services/Controllers/homeControllers.dart';
 
 import '../../App_config/App_color/app_color.dart';
 import '../../Widgets/Shared_widgets/shared_Iconbuttons.dart';
+import '../../Widgets/Shared_widgets/shared_data_card.dart';
 import '../../Widgets/Shared_widgets/shared_icon.dart';
 import '../../Widgets/Shared_widgets/shared_image_button.dart';
 
@@ -111,13 +112,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
             ),
           )
 
-          //   SharedImageButton(
-          //       icon: "assets/icons/cart.png",
-          //       onTap:(){
-          //
-          //       }
-          //
-          //   )
+
         ],
       ),
       bottomNavigationBar: BottomAppBar(
@@ -1148,6 +1143,57 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                   ),
                 ],
               ),
+
+              const SizedBox(
+                height: 30,
+              ),
+
+
+              ///Recomendations
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Best Sale Product",
+                    style: heading5,),
+                  Text("See more",
+                    style: heading7,),
+
+                ],
+              ),
+
+              const SizedBox(
+                height: 30,
+              ),
+
+
+            SizedBox(
+              height: 350,
+              width: double.maxFinite,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  SizedBox(
+                    width:200,
+                    height: 240,
+                    child: SharedDataCard(
+                      controller:homeController.itemList[0],
+                      index: 0,
+                    ),
+                  ),
+                  SizedBox(
+                    width:200,
+                    height: 240,
+                    child: SharedDataCard(
+                      controller:homeController.itemList[1],
+                      index: 1,
+                    ),
+                  )
+                ],
+              ),
+            )
+
+
+
             ],
           ),
         ),
