@@ -13,7 +13,24 @@ import '../../Widgets/Shared_widgets/shared_icon.dart';
 import '../../Widgets/Shared_widgets/shared_image_button.dart';
 
 class ClothDetailScreen extends StatefulWidget {
-  ClothDetailScreen({Key? key}) : super(key: key);
+  final String image;
+  final String name;
+  final String brandName;
+  final String Xrating;
+  final String nosold;
+  final String review;
+  final String price;
+  final String ratings;
+
+  ClothDetailScreen({Key? key,
+    required this.image,
+    required this.name,
+    required this.brandName,
+    required this.Xrating,
+    required this.nosold,
+    required this.review,
+  required this.price,
+  required this.ratings}) : super(key: key);
 
   @override
   State<ClothDetailScreen> createState() => _ClothDetailScreenState();
@@ -124,7 +141,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                     height: 8,
                   ),
                   Text(
-                    "\$18.00",
+                    widget.price,
                     style: heading1,
                   ),
                 ],
@@ -215,7 +232,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                         child: SizedBox(
                       width: double.infinity,
                       child: Image.asset(
-                        "assets/test/shirtfour.png",
+                        widget.image,
                         fit: BoxFit.contain,
                       ),
                     )),
@@ -229,13 +246,13 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                         child: Column(
                           children: [
                             smallContainer(
-                                "assets/test/shirtfour.png", 40.0, 40.0),
+                                widget.image, 40.0, 40.0),
                             smallContainer(
-                                "assets/test/shirtfour.png", 40.0, 40.0),
+                                widget.image, 40.0, 40.0),
                             smallContainer(
-                                "assets/test/shirtfour.png", 40.0, 40.0),
+                                widget.image, 40.0, 40.0),
                             smallContainer(
-                                "assets/test/shirtfour.png", 40.0, 40.0),
+                                widget.image, 40.0, 40.0),
                           ],
                         ))
                   ],
@@ -251,7 +268,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                 children: [
                   SharedIcons(icon: EvaIcons.archive, color: grey),
                   Text(
-                    "anthony.bd",
+                    widget.brandName,
                     style: heading4,
                   ),
                 ],
@@ -262,7 +279,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
               ),
 
               Text(
-                "Essential Men's Short - Sleeve\nCrewneck T-Shirt",
+                widget.name,
                 style: heading5,
               ),
 
@@ -282,7 +299,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                         width: 10,
                       ),
                       Text(
-                        "4.9 Ratings",
+                        widget.ratings,
                         style: heading6,
                       ),
                     ]),
@@ -291,14 +308,14 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                     width: 20,
                   ),
                   Text(
-                    "* 2.3 + Reviews",
+                    "* ${widget.review}",
                     style: heading6,
                   ),
                   const SizedBox(
                     width: 20,
                   ),
                   Text(
-                    "* 2.9 + Sold",
+                    "* ${widget.nosold}",
                     style: heading6,
                   ),
                   const SizedBox(
@@ -635,7 +652,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                         height: 30,
                       ),
                       Text(
-                        "2.3 + Reviews",
+                        widget.review,
                         style: heading4,
                       ),
                     ],
@@ -832,10 +849,10 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  smallContainerx("assets/test/shirtfour.png", 80.0, 80.0),
-                  smallContainerx("assets/test/shirtfour.png", 80.0, 80.0),
-                  smallContainerx("assets/test/shirtfour.png", 80.0, 80.0),
-                  smallContainerx("assets/test/shirtfour.png", 80.0, 80.0),
+                  smallContainerx(widget.image, 80.0, 80.0),
+                  smallContainerx(widget.image, 80.0, 80.0),
+                  smallContainerx(widget.image, 80.0, 80.0),
+                  smallContainerx(widget.image, 80.0, 80.0),
                 ],
               ),
 

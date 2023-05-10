@@ -90,6 +90,13 @@ TextStyle heading12=GoogleFonts.roboto(
 );
 
 
+TextStyle heading13=GoogleFonts.roboto(
+    fontWeight: FontWeight.w400,
+    fontSize: 12,
+    color: grey
+);
+
+
 
 
 

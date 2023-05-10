@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:moneypoint/Screens/details_screens/cloth_detail_screeen.dart';
 import 'package:moneypoint/Widgets/Shared_widgets/share_image_assets.dart';
 
 import '../../App_config/App_Styling/app_styling.dart';
 import '../../App_config/App_color/app_color.dart';
+import '../../Services/Controllers/homeControllers.dart';
+import '../../Widgets/Shared_widgets/shared_icon.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -12,9 +17,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  HomeController homeController = Get.find();
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: CustomScrollView(
         slivers: [
 
@@ -172,12 +181,141 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: Text(
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In finibus, lorem quis consequat fermentum, erat purus placerat eros, eu consequat enim velit id nulla. Duis dui purus, tincidunt non augue at, ultricies efficitur tellus. Nulla fermentum mi non dui facilisis vestibulum. Nam ipsum dui, sodales quis sagittis vel, tempus sit amet dui. Etiam sodales varius est eu auctor. Nunc varius dolor sit amet consequat gravida. Donec maximus leo porttitor tellus lobortis, blandit pellentesque nulla auctor. Cras lectus ipsum, euismod sed magna in, blandit rutrum neque. Fusce finibus, leo sit amet pellentesque auctor, quam orci ornare libero, et laoreet augue elit sed lectus. Praesent ultricies justo egestas, rutrum ante et, suscipit ex",
-              style: TextStyle(fontSize: 29),
+              "Lorem-ipsum dolor sit amet, consectetur adipiscing elit. In finibu",
+              style: TextStyle(fontSize: 22),
             ),
-          )
+          ),
+
+
+          ///Grid view list
+          SliverGrid(
+              delegate: SliverChildBuilderDelegate((context,index){
+                return GestureDetector(
+                  onTap: (){
+                    Get.to(()=>ClothDetailScreen(
+                    image:homeController.itemList[index].image!,
+                      name:homeController.itemList[index].name!,
+                      brandName:homeController.itemList[index].brand!,
+                      Xrating:homeController.itemList[index].xratings!,
+                      nosold:homeController.itemList[index].noSold!,
+                      review:homeController.itemList[index].review!,
+                      price:homeController.itemList[index].price!,
+                      ratings:homeController.itemList[index].ratings!,
+
+
+
+                    ));
+                  },
+                  child: Card(
+                    elevation: 2.0,
+                    child: Container(
+                      width: double.infinity,
+                      height: 400,
+                      child: Column(
+                        children: [
+
+                          ///image card
+                          Container(
+                            color:primary3,
+                            height:180 ,
+                            width: double.infinity,
+                            child: Image.asset(homeController.itemList[index].image!,),
+                          ),
+
+                          SizedBox(height: 8,),
+
+                          ///header category
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left:8.0,top:4.0),
+                              child: Text("Shirt",
+                              style: heading4,),
+                            ),
+                          ),
+
+
+                          ///title
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                homeController.itemList[index].name!,
+                                style: heading5,
+                              ),
+                            ),
+                          ),
+
+
+                          ///
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                             // crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(Icons.star,color: orange,size: 18.0,),
+                                    const SizedBox(width: 2,),
+                                    Text(
+                                      homeController.itemList[index].ratings!,
+                                      style: heading4,
+                                    ),
+                                  ],
+                                ),
+                                Text(
+                                  homeController.itemList[index].price!,
+                                  style: heading1,
+                                ),
+
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+
+                //   Padding(
+                //   padding: const EdgeInsets.all(8.0),
+                //   child: Card(
+                //   elevation: 2.0,
+                //    child: Column(
+                //      children: [
+                //        ///image card
+                //        Container(
+                //          height:120,
+                //          decoration: BoxDecoration(
+                //            borderRadius: BorderRadius.circular(10.0),
+                //            color: primary3,
+                //            // image: DecorationImage(
+                //            //   image: AssetImage("assets/test/shirtfour.png")
+                //            // )
+                //          ),
+                //
+                //        )
+                //      ],
+                //    ),
+                //   ),
+                // );
+              },
+              childCount: homeController.itemList.length),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 6,
+                crossAxisSpacing: 4,
+                childAspectRatio: 0.6
+
+
+
+
+              ),
+          ),
         ],
       ),
     );
@@ -211,4 +349,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ],
     );
   }
+
+
+  ///Image card
 }
