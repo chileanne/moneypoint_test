@@ -52,7 +52,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
             color: black,
             icon: const Icon(Icons.arrow_back_ios),
             onPressed: () {
-              print("Eva Icon heart Pressed");
+              Get.back();
             }),
 
         ///actions widget
