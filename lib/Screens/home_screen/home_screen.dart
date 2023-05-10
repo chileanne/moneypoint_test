@@ -141,7 +141,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: TextFormField(
                     autofocus: true,
                     decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.search, color: grey, size: 24.0),
+                      contentPadding: EdgeInsets.all(4.0),
+                      prefixIcon: Icon(Icons.search, color: grey,),
                       hintText: 'Search',
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
