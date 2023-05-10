@@ -360,7 +360,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     const SizedBox(width: 2,),
                                     Text(
                                       homeController.itemList[index].ratings!,
-                                      style: heading4,
+                                      style: heading15,
                                     ),
                                   ],
                                 ),
