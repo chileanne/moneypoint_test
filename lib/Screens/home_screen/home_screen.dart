@@ -18,12 +18,108 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   HomeController homeController = Get.find();
+  int index=0;
+  final Screens=[
+    HomeScreen(),
+    Container(color: Colors.red,),
+    Container(color: Colors.blue,),
+    Container(color: Colors.green,),
+  ];
 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: NavigationBarTheme(
+        data: NavigationBarThemeData(
+            indicatorColor: Colors.transparent,
+            labelTextStyle: MaterialStateProperty.all(
+             heading8,
+            ),
+        ),
+        child: NavigationBar(
+          backgroundColor: white,
+          animationDuration: Duration(seconds: 3),
+          selectedIndex: index,
+          onDestinationSelected:(index)=>
+              setState(() =>this.index=index),
+          destinations: [
+            NavigationDestination(
+                icon: Image.asset(
+                  "assets/icons/home.png",
+                  fit: BoxFit.contain,
+                  color: grey,
+                  width: 30,
+                  height: 30,
+                ),
+                selectedIcon:Image.asset(
+                  "assets/icons/home.png",
+                  fit: BoxFit.contain,
+                  color: primary1,
+                  width: 30,
+                  height: 30,
+                ) ,
+                label: "Home",),
+            NavigationDestination(
+                icon: Image.asset(
+                  "assets/icons/voucher.png",
+                  fit: BoxFit.contain,
+                  color: grey,
+                  width: 30,
+                  height: 30,
+                ),
+                selectedIcon: Image.asset(
+                  "assets/icons/voucher.png",
+                  fit: BoxFit.contain,
+                  color: primary1,
+                  width: 30,
+                  height: 30,
+                ),
+                label: "Voucher"),
 
+
+
+            NavigationDestination(
+                icon:Image.asset(
+                  "assets/icons/wallet.png",
+                  fit: BoxFit.contain,
+                  color: grey,
+                  width: 30,
+                  height: 30,
+                ),
+                selectedIcon:Image.asset(
+                  "assets/icons/wallet.png",
+                  fit: BoxFit.contain,
+                  color: primary1,
+                  width: 30,
+                  height: 30,
+                ),
+                label: "Wallet"),
+
+
+            NavigationDestination(
+                icon: Image.asset(
+                  "assets/icons/settings.png",
+                  fit: BoxFit.contain,
+                  color: grey,
+                  width: 30,
+                  height: 30,
+                ),
+                selectedIcon:Image.asset(
+                  "assets/icons/settings.png",
+                  fit: BoxFit.contain,
+                  color: primary1,
+                  width: 30,
+                  height: 30,
+                ),
+                label: "Settings"),
+
+
+
+          ],
+
+        ),
+      ),
       body: CustomScrollView(
         slivers: [
 
