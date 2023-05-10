@@ -236,30 +236,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: PageView(
                       scrollDirection: Axis.horizontal,
                       children: [
-                        //appbarImage( "assets/test/onen.png",),
-                        // appbarImage(
-                        //   "assets/test/one.jpeg",
-                        // ),
-                        // appbarImage(
-                        //   "assets/test/two.jpeg",
-                        // ),
-                        // appbarImage(
-                        //   "assets/test/three.jpeg",
-                        // ),
-                        // appbarImage(
-                        //   "assets/test/four.jpeg",
-                        // ),
-
-
-
-
-                        // appbarImage(
-                        //   "assets/test/fab.jpeg",
-                        // ),
-
 
                         appbarImage(
-                          "assets/test/fabc.jpeg",
+                          "assets/test/dd.png",
+                        ),
+
+                        appbarImage(
+                          "assets/test/ddd.png",
                         ),
 
                       ],
@@ -319,7 +302,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
 
-                    ));
+                    ),
+                    transition: Transition.downToUp);
                   },
                   child: SharedDataCard(
                     controller:homeController.itemList[index],
