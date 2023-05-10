@@ -116,7 +116,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
         ],
       ),
       bottomNavigationBar: BottomAppBar(
-        height: 120,
+        height: 80,
         color: white,
         child: Padding(
           padding: const EdgeInsets.only(left: 18.0, right: 10, top: 12),
@@ -436,12 +436,13 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                 height: 14,
               ),
 
-              Column(
+
+              Obx(()=>Column(
                 children: [
-                  descriptionSubCard("Durable and Combination Cotton Fabric."),
-                  descriptionSubCard("Comfortable and quality Tshirt."),
-                  descriptionSubCard("Patch pocket on the left side."),
-                  descriptionSubCard("Go to classic shirt ."),
+                  descriptionSubCard("Durable and Combination Cotton Fabric.",false),
+                  descriptionSubCard("Comfortable and quality Tshirt.",homeController.seeless.value),
+                  descriptionSubCard("Patch pocket on the left side.",homeController.seeless.value),
+                  descriptionSubCard("Go to classic shirt .",homeController.seeless.value),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
@@ -454,24 +455,34 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                        if(homeController.seeless.isTrue){
+                          homeController.seeless.value=false;
+                        }else{
+                          homeController.seeless.value=true;
+                        }
+                        },
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
+                            homeController.seeless.isFalse?
                             Text(
                               "See Less",
                               style: heading7,
+                            ): Text(
+                              "See More",
+                              style: heading7,
                             ),
-                            SharedIcons(
-                                icon: EvaIcons.arrowIosUpwardOutline,
-                                color: grey)
+                            // SharedIcons(
+                            //     icon: EvaIcons.arrowIosUpwardOutline,
+                            //     color: grey)
                           ],
                         ),
                       ),
                     ),
                   ),
                 ],
-              ),
+              )),
 
               const SizedBox(
                 height: 14,
@@ -1274,21 +1285,24 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
   }
 
   ///description card widgets
-  Widget descriptionSubCard(String desc) {
-    return Row(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: SharedIcons(
-            icon: Icons.star,
-            color: grey,
+  Widget descriptionSubCard(String desc, bool value) {
+    return Visibility(
+      visible: value==false,
+      child: Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SharedIcons(
+              icon: Icons.star,
+              color: grey,
+            ),
           ),
-        ),
-        Text(
-          desc,
-          style: heading4,
-        ),
-      ],
+          Text(
+            desc,
+            style: heading4,
+          ),
+        ],
+      ),
     );
   }
 

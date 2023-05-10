@@ -9,6 +9,7 @@ import 'package:moneypoint/Services/models/item_models.dart';
 class HomeController extends GetxController{
 
   var selectedDropdownValue ="0".obs;
+  var seeless=true.obs;
   var selectedLove="".obs;
   var itemList=<Tshirt>[].obs;
 
