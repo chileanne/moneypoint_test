@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
         data: NavigationBarThemeData(
             indicatorColor: Colors.transparent,
             labelTextStyle: MaterialStateProperty.all(
-             heading8,
+             heading14,
             ),
         ),
         child: NavigationBar(
