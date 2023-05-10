@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -292,7 +294,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                 // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SizedBox(
-                    width: 128,
+                    width: Platform.isIOS?128:110,
                     child: Row(children: [
                       SharedIcons(icon: EvaIcons.star, color: orange),
                       const SizedBox(
@@ -304,22 +306,22 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                       ),
                     ]),
                   ),
-                  const SizedBox(
-                    width: 20,
+                   SizedBox(
+                    width: Platform.isIOS?20:10,
                   ),
                   Text(
                     "* ${widget.review}",
                     style: heading6,
                   ),
-                  const SizedBox(
-                    width: 20,
+                  SizedBox(
+                    width: Platform.isIOS?20:10,
                   ),
                   Text(
                     "* ${widget.nosold}",
                     style: heading6,
                   ),
-                  const SizedBox(
-                    width: 10,
+                  SizedBox(
+                    width: Platform.isIOS?10:0,
                   ),
                 ],
               ),
@@ -555,7 +557,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                         height: 8,
                       ),
                       Text(
-                        "About 5mins ago | 96.7% positive Feedback",
+                        "About 5mins ago | 96.7% Feedback",
                         style: heading9,
                       ),
                       SizedBox(
@@ -658,7 +660,8 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                     ],
                   ),
                   SizedBox(width: 8),
-                  Expanded(
+                  SizedBox(
+                    width: 200,
                     child: Column(
                       children: [
                         Row(
@@ -671,7 +674,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                             ),
                             const SizedBox(width: 8),
                             SizedBox(
-                              width: 150,
+                              width: Platform.isIOS?150:114,
                               child: Stack(
                                 children: [
                                   Divider(
@@ -687,7 +690,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                                 ],
                               ),
                             ),
-                            SizedBox(width: 8),
+                            SizedBox(width: Platform.isIOS?8:4),
                             Text(
                               "1.3k",
                               style: heading8,
@@ -704,7 +707,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                             ),
                             const SizedBox(width: 8),
                             SizedBox(
-                              width: 150,
+                              width: Platform.isIOS?150:114,
                               child: Stack(
                                 children: [
                                   Divider(
@@ -720,7 +723,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                                 ],
                               ),
                             ),
-                            const SizedBox(width: 8),
+                            SizedBox(width: Platform.isIOS?8:4),
                             Text(
                               "710",
                               style: heading8,
@@ -737,7 +740,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                             ),
                             const SizedBox(width: 8),
                             SizedBox(
-                              width: 150,
+                              width: Platform.isIOS?150:114,
                               child: Stack(
                                 children: [
                                   Divider(
@@ -753,7 +756,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                                 ],
                               ),
                             ),
-                            SizedBox(width: 8),
+                            SizedBox(width: Platform.isIOS?8:4),
                             Text(
                               "140",
                               style: heading8,
@@ -770,7 +773,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                             ),
                             const SizedBox(width: 8),
                             SizedBox(
-                              width: 150,
+                              width: Platform.isIOS?150:114,
                               child: Stack(
                                 children: [
                                   Divider(
@@ -786,7 +789,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                                 ],
                               ),
                             ),
-                            const SizedBox(width: 8),
+                            SizedBox(width: Platform.isIOS?8:4),
                             Text(
                               "10",
                               style: heading8,
@@ -803,7 +806,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                             ),
                             const SizedBox(width: 8),
                             SizedBox(
-                              width: 150,
+                              width: Platform.isIOS?150:114,
                               child: Stack(
                                 children: [
                                   Divider(
@@ -819,7 +822,7 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                                 ],
                               ),
                             ),
-                            const SizedBox(width: 8),
+                      SizedBox(width: Platform.isIOS?8:4),
                             Text(
                               "4",
                               style: heading8,
@@ -846,15 +849,31 @@ class _ClothDetailScreenState extends State<ClothDetailScreen> {
                 height: 14,
               ),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  smallContainerx(widget.image, 80.0, 80.0),
-                  smallContainerx(widget.image, 80.0, 80.0),
-                  smallContainerx(widget.image, 80.0, 80.0),
-                  smallContainerx(widget.image, 80.0, 80.0),
-                ],
+
+
+              SizedBox(
+                width: 400,
+                height: 100,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    smallContainerx(widget.image, 80.0, 80.0),
+                    smallContainerx(widget.image, 80.0, 80.0),
+                    smallContainerx(widget.image, 80.0, 80.0),
+                    smallContainerx(widget.image, 80.0, 80.0),
+                  ],
+                ),
               ),
+
+              // Row(
+              //  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              //     smallContainerx(widget.image, 80.0, 80.0),
+              //     smallContainerx(widget.image, 80.0, 80.0),
+              //     smallContainerx(widget.image, 80.0, 80.0),
+              //     smallContainerx(widget.image, 80.0, 80.0),
+              //   ],
+              // ),
 
               const SizedBox(
                 height: 20,

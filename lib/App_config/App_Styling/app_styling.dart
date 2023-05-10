@@ -44,7 +44,7 @@ TextStyle heading5=GoogleFonts.roboto(
 
 TextStyle heading6=GoogleFonts.roboto(
     fontWeight: FontWeight.w600,
-    fontSize: 18,
+    fontSize: Platform.isIOS?18:16,
     color: grey
 );
 
